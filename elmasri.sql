@@ -120,4 +120,36 @@ INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascim
 VALUES ('Fernando', 'T', 'Wong', 33344555587, '08-12-1955','Rua da Lapa, 34,SaoPaulo,SP', 'M', 40.000, 88866555576, 5);
 
 INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
-VALUES ('Alice', 'J', 'Zelaya', 33344555587, '08-12-1955','Rua da Lapa, 34,SaoPaulo,SP', 'M', 40.000, 88866555576, 5);
+VALUES ('Alice', 'J', 'Zelaya', 33344555587, '08-12-1955','Rua Souza Lima, 35, Curitiba, PR', 'F', 25.000, 98765432168, 4);
+
+INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
+VALUES ('Jenifer', 'S', 'Souza', 98765432168, '20-06-1941','Av Arthur de Lima, 54, Santo Andre ,SP', 'F', 43.000, 88866555576, 4);
+
+INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
+VALUES ('Ronaldo', 'K', 'Lima', 66688444476, '15-09-1962','Rua Reboucas, 65, Piracicaba ,SP', 'M', 38.000, 33344555587, 5);
+
+INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
+VALUES ('Joice', 'A', 'Leite', 45345345376, '31-07-1972','Av Lucas Obes, 74, SaoPaulo ,SP', 'F', 25.000, 33344555587, 5);
+
+INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
+VALUES ('Andre', 'V', 'Pereira', 98798798733, '29-03-1969','Rua Timbira, 35, SaoPaulo ,SP', 'M', 25.000, 98765432168, 4);
+
+INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
+VALUES ('Jorge', 'E', 'Brito', 88866555576, '10-11-1937','Rua do Horto, 35, SaoPaulo ,SP', 'M', 55.000, NULL, 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
