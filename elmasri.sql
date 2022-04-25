@@ -1,4 +1,8 @@
-CREATE DATABASE uvv
+
+    /*    */
+    
+    
+    CREATE DATABASE uvv
     WITH 
     OWNER = gabrielsobral
     ENCODING = 'UTF8'
@@ -252,7 +256,38 @@ VALUES (45345345376, 2, 20);
 INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
 VALUES (45345345376, 1, 20);
 
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (33344555587, 2, 10);
 
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (33344555587, 3, 10);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (33344555587, 10, 10);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (33344555587, 20, 10);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (99988777767, 30, 30);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (99988777767, 10, 10);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (98798798733, 10, 35);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (98798798733, 30, 5);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (98765432168, 30, 20);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (98765432168, 20, 15);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (88866555576, 20, NULL);
 
 
 
