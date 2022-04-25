@@ -7,6 +7,9 @@ CREATE DATABASE uvv
     lc_collate: pt_BR.UTF-8
     lc_ctype: pt_BR.UTF-8
     allow_connections: true
+    
+    /*    */
+    
 CREATE TABLE funcionario (
                 cpf CHAR(11) NOT NULL,
                 primeiro_nome VARCHAR(15) NOT NULL,
@@ -63,6 +66,8 @@ CREATE TABLE dependente (
                 CONSTRAINT nome_dependente_pk PRIMARY KEY (cpf_funcionario, nome_dependente)
 );
 
+/*    */
+
 
 ALTER TABLE funcionario ADD CONSTRAINT funcionario_funcionario_fk
 FOREIGN KEY (cpf_supervisor)
@@ -113,6 +118,11 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+
+/*    */
+
+
+
 INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
 VALUES ('Joao', 'B', 'Silva', 12345678966, '09-01-19651','Rua das Flores,751,SaoPaulo,SP', 'M', 30.000, 33344555587, 5);
 
@@ -137,6 +147,110 @@ VALUES ('Andre', 'V', 'Pereira', 98798798733, '29-03-1969','Rua Timbira, 35, Sao
 INSERT INTO funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, data_nascimento, endereco, sexo, salario, cpf_supervisor, numero_departamento)
 VALUES ('Jorge', 'E', 'Brito', 88866555576, '10-11-1937','Rua do Horto, 35, SaoPaulo ,SP', 'M', 55.000, NULL, 1);
 
+
+
+/*    */
+
+
+INSERT INTO departamento (nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente)
+VALUES ('Pesquisa', 5, 33344555587, '22-05-1998');
+
+INSERT INTO departamento (nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente)
+VALUES ('Admnistracao', 4, 98765432168, '01-01-1995');
+
+INSERT INTO departamento (nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente)
+VALUES ('Matriz', 1, 88866555576, '19-06-1981');
+
+
+
+/*    */
+
+
+INSERT INTO localizacoes_departamento (numero_departamento, local)
+VALUES (1, 'Sao Paulo');
+
+INSERT INTO localizacoes_departamento (numero_departamento, local)
+VALUES (4, 'Maua');
+
+INSERT INTO localizacoes_departamento (numero_departamento, local)
+VALUES (5, 'Santo Andre');
+
+INSERT INTO localizacoes_departamento (numero_departamento, local)
+VALUES (5, 'Itu');
+
+INSERT INTO localizacoes_departamento (numero_departamento, local)
+VALUES (5, 'Sao Paulo');
+
+
+/*    */
+
+
+INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento)
+VALUES ('ProjetoX', 1,'Santo Andre', 5);
+
+INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento)
+VALUES ('ProjetoY', 2,'Itu', 5);
+
+INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento)
+VALUES ('ProjetoZ', 3,'Sao Paulo', 5);
+
+INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento)
+VALUES ('Informatizacao', 10,'Maua', 4);
+
+INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento)
+VALUES ('Reorganizacao', 20,'Sao Paulo', 1);
+
+INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento)
+VALUES ('Novosbeneficios', 30,'Maua', 4);
+
+
+
+/*   */
+ 
+
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco)
+VALUES (33344555587, 'Alicia', 'F', 05-04-1986, 'Filha');
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco)
+VALUES (33344555587, 'Thiago', 'M', 25-10-1983, 'Filho');
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco)
+VALUES (33344555587, 'Janaina', 'F', 03-05-1958, 'Esposa');
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco)
+VALUES (98765432168, 'Antonio', 'M', 28-02-1942, 'Marido');
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco)
+VALUES (12345678968, 'Michael', 'M', 04-01-1988, 'Filho');
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco)
+VALUES (12345678968, 'Alicia', 'F', 30-12-1988, 'Filha');
+
+INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento, parentesco)
+VALUES (12345678968, 'Elizabeth', 'F', 05-05-1967, 'Esposa');
+
+
+/*   */
+
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (12345678966, 1, 32.5);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (12345678966, 2, 7.5);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (66688444476, 3, 40);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (45345345376, 1, 20);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (45345345376, 2, 20);
+
+INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
+VALUES (45345345376, 1, 20);
 
 
 
