@@ -1,5 +1,5 @@
 
-    /*    */
+    /*  Primeiramente, devemos criar o banco de dados (UVV) e colocar as definicoes e o gerente do BD (gabrielsobral) */
     
     
     CREATE DATABASE uvv
@@ -12,7 +12,7 @@
     lc_ctype: pt_BR.UTF-8
     allow_connections: true
     
-    /*    */
+    /*  Depois é o momento de criar todas as tabelas e suas colunas com suas respectivas exclusividades e definicoes  */
     
 CREATE TABLE funcionario (
                 cpf CHAR(11) NOT NULL,
@@ -70,7 +70,18 @@ CREATE TABLE dependente (
                 CONSTRAINT nome_dependente_pk PRIMARY KEY (cpf_funcionario, nome_dependente)
 );
 
-/*    */
+/*  Agora devemos criar as chaves alternativas (AK)  */
+
+
+CREATE UNIQUE INDEX departamento_idx
+ ON departamento
+ (nome_departamento);
+ 
+CREATE UNIQUE INDEX projeto_idx
+ ON projeto
+ (nome_projeto);
+
+/*  Agora devemos alterar as tabelas para inserir as chaves estrangeiras (FK)  */
 
 
 ALTER TABLE funcionario ADD CONSTRAINT funcionario_funcionario_fk
@@ -123,7 +134,7 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 
-/*    */
+/*  Neste momento devemos inserir todos os dados das colunas da tabela funcionario  */
 
 
 
@@ -153,7 +164,7 @@ VALUES ('Jorge', 'E', 'Brito', 88866555576, '10-11-1937','Rua do Horto, 35, SaoP
 
 
 
-/*    */
+/*  " " " da tabela departamento  */
 
 
 INSERT INTO departamento (nome_departamento, numero_departamento, cpf_gerente, data_inicio_gerente)
@@ -167,7 +178,7 @@ VALUES ('Matriz', 1, 88866555576, '19-06-1981');
 
 
 
-/*    */
+/*   " " " da tabela localizacoes_departamento  */
 
 
 INSERT INTO localizacoes_departamento (numero_departamento, local)
@@ -186,7 +197,7 @@ INSERT INTO localizacoes_departamento (numero_departamento, local)
 VALUES (5, 'Sao Paulo');
 
 
-/*    */
+/*   " " " da tabela projeto  */
 
 
 INSERT INTO projeto (nome_projeto, numero_projeto, local_projeto, numero_departamento)
@@ -209,7 +220,7 @@ VALUES ('Novosbeneficios', 30,'Maua', 4);
 
 
 
-/*   */
+/*   " " " da tabela dependente */
  
 
 
@@ -235,7 +246,7 @@ INSERT INTO dependente (cpf_funcionario, nome_dependente, sexo, data_nascimento,
 VALUES (12345678968, 'Elizabeth', 'F', 05-05-1967, 'Esposa');
 
 
-/*   */
+/*   " " " da tabela trabalha_em */
 
 
 INSERT INTO trabalha_em (cpf_funcionario, numero_projeto, horas)
