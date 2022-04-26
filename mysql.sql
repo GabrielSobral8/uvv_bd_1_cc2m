@@ -1,3 +1,7 @@
+
+/* Primeiramente devemos criar todas as tabelas com suas colunas*/
+
+
 CREATE TABLE IF NOT EXISTS departamento (
 	numero_departamento INTEGER NOT NULL,
 	nome_departamento VARCHAR(15) NOT NULL,
@@ -38,11 +42,14 @@ CREATE TABLE IF NOT EXISTS trabalha_em (
   numero_projeto INTEGER NOT NULL,
   horas DECIMAL(3, 1) NOT NULL
 );
+/* Em seguida devemos adicionar as chaves alternativas (AK)*/
 CREATE UNIQUE INDEX departamento_idx
  ON departamento ( nome_departamento );
 
 CREATE UNIQUE INDEX projeto_idx
  ON projeto ( nome_projeto );
+
+/* Em seguida devemos adicionar as chaves primarias (PK)*/
 
 ALTER TABLE departamento
     ADD PRIMARY KEY (numero_departamento);
@@ -61,6 +68,10 @@ ALTER TABLE projeto
 
 ALTER TABLE trabalha_em
     ADD PRIMARY KEY (cpf_funcionario, numero_projeto);
+    
+    
+  /* Em seguida devemos adicionar as chaves estrangeiras (FK)*/  
+    
     
 ALTER TABLE departamento
 ADD FOREIGN KEY (cpf_gerente) 
@@ -94,12 +105,13 @@ ALTER TABLE trabalha_em
 ADD FOREIGN KEY (numero_projeto) 
 REFERENCES projeto (numero_projeto);
 
+/* Neste momento para consertar os erros, devemeos alterar a condicao de NOT NULL de ambas colunas para NULL*/
 
 ALTER TABLE funcionario MODIFY cpf_supervisor CHAR(11) NULL;
 
 ALTER TABLE trabalha_em MODIFY horas DECIMAL(3,1) NULL;
 
-
+/* Agora devemos fazer a insercao dos valores*/
 /* Infelizmente descobri que nao preciso de fazer varios INSERT INTO apenas no MySQL, perdi muito tempo no postgre*/
 
 
