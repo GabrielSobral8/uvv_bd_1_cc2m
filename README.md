@@ -1,3 +1,4 @@
 # Pset 1 
 ### Gabriel de Oliveira Sobral && Professor Abrantes
-#### Este é o readme do repositorio da aula de banco de dados, neste caso sobre o pset 1, dentro do repositorio existe um subdiretorio chamado pset 1 no qual explica como os subdiretorios funcionam
+# Obejetivo do PSET 1
+### O objetivo foi criar scripts em SQL usando os SGBD's MySQL/MariaDB e PostgreSQL a fim de implementar o projeto elmasri
