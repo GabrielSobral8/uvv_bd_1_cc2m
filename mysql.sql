@@ -93,3 +93,10 @@ REFERENCES funcionario (cpf);
 ALTER TABLE trabalha_em
 ADD FOREIGN KEY (numero_projeto) 
 REFERENCES projeto (numero_projeto);
+
+
+ALTER TABLE funcionario MODIFY cpf_supervisor CHAR(11) NULL;
+
+ALTER TABLE trabalha_em MODIFY horas DECIMAL(3,1) NULL;
+
+
