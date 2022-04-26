@@ -133,6 +133,9 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+/* Agora devemos alterar as horas no trabalha_em pois ela pode ser nula, e no projeto esta como NOT NULL */
+
+ALTER TABLE trabalha_em MODIFY horas DECIMAL(3,1) NULL;
 
 /*  Neste momento devemos inserir todos os dados das colunas da tabela funcionario  */
 
