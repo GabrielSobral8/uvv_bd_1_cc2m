@@ -133,9 +133,11 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-/* Agora devemos alterar as horas no trabalha_em pois ela pode ser nula, e no projeto esta como NOT NULL */
+/* Agora devemos alterar as horas no trabalha_em pois ela pode ser nula, e no projeto esta como NOT NULL, e tambem resolver outro erro, na coluna cpf_supervisor aonde ela pode ser nula */
 
 ALTER TABLE trabalha_em MODIFY horas DECIMAL(3,1) NULL;
+
+ALTER TABLE funcionario MODIFY cpf_supervisor CHAR(11) NULL;
 
 /*  Neste momento devemos inserir todos os dados das colunas da tabela funcionario  */
 
